@@ -79,6 +79,35 @@ function Home(){
                     pela própria associação e contam com o apoio de patronos para se tornarem realidade. Ao se 
                     tornar patrono, é possível escolher qual projeto deseja apoiar, contribuindo diretamente para a 
                     realização de ações específicas."/>
+                    <CardGrid>
+                        <Card 
+                            imagem={IgrejaMatriz} 
+                            imagemAlt="Fotografia Igreja Matriz"
+                            titulo="Folhetos Educativos"
+                            descricao="Produção de materiais informativos sobre os patrimônios históricos de Itu, 
+                            distribuídos gratuitamente em escolas e espaços culturais."
+                            botaoTexto="Saiba Mais →"
+                            botaoTo="/projetos"
+                        />
+                        <Card 
+                            imagem={IgrejaMatriz} 
+                            imagemAlt="Fotografia Igreja Matriz"
+                            titulo="Maquete 3D"
+                            descricao="Desenvolvimento de maquetes tridimensionais de edifícios 
+                            históricos para exposições e atividades educativas."
+                            botaoTexto="Saiba Mais →"
+                            botaoTo="/projetos"
+                        />
+                        <Card 
+                            imagem={IgrejaMatriz} 
+                            imagemAlt="Fotografia Igreja Matriz"
+                            titulo="Palestras em Escolas"
+                            descricao="Ciclo de palestras sobre educação patrimonial voltado para estudantes 
+                            do ensino fundamental e médio."
+                            botaoTexto="Saiba Mais →"
+                            botaoTo="/projetos"
+                        />
+                    </CardGrid>
                 </Container>
             </Section>
 
