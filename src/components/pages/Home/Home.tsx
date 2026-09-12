@@ -63,6 +63,7 @@ function Home(){
                             botaoTo="/cursos"
                         />
                     </CardGrid>
+                    <LinkButton cor="rose" text="Ver todos os cursos →" to="/cursos" />
                 </Container>
             </Section>
 

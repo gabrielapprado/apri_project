@@ -26,3 +26,15 @@
   border: none;
   color: var(--borgonha); 
 }
+
+.rose{
+  background-color: transparent;
+  border: solid 1.3px var(--rose);
+  color: var(--rose);
+}
+
+.rose:hover{
+  background-color: var(--rose);
+  border: solid 1.3px var(--borgonha);
+  color: var(--branco);
+}
