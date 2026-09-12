@@ -5,6 +5,9 @@ import Container from "../../ui/Container"
 import Hero from "../../layout/Hero"
 import LinkButton from "../../ui/LinkButton"
 import Footer from "../../layout/Footer"
+import CardGrid from "../../ui/CardGrid"
+import Card from "../../ui/Card"
+import IgrejaMatriz from "../../../assets/Igreja_matriz_de_Itu.jpg"
 
 function Home(){
     return (
@@ -34,6 +37,32 @@ function Home(){
                     descricao="Cursos ministrados pela própria associação, 
                     desenvolvidos para fomentar a educação patrimonial e 
                     aproximar a comunidade da história de Itu."/>
+                    <CardGrid>
+                        <Card 
+                            imagem={IgrejaMatriz} 
+                            imagemAlt="Fotografia Igreja Matriz"
+                            titulo="História e Patrimônio de Itu"
+                            descricao="Conheça a trajetória histórica e os principais patrimônios da cidade"
+                            botaoTexto="Acesse →"
+                            botaoTo="/cursos"
+                        />
+                        <Card 
+                            imagem={IgrejaMatriz} 
+                            imagemAlt="Fotografia Igreja Matriz"
+                            titulo="Introdução a Conservação"
+                            descricao="Aprenda conceitos básicos sobre preservação e conservação patrimonial"
+                            botaoTexto="Acesse →"
+                            botaoTo="/cursos"
+                        />
+                        <Card 
+                            imagem={IgrejaMatriz} 
+                            imagemAlt="Fotografia Igreja Matriz"
+                            titulo="Arquitetura Colonial Paulista"
+                            descricao="Entenda as características da arquitetura histórica do interior de São Paulo"
+                            botaoTexto="Acesse →"
+                            botaoTo="/cursos"
+                        />
+                    </CardGrid>
                 </Container>
             </Section>
 

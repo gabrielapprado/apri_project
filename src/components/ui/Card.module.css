@@ -1,0 +1,42 @@
+.card {
+  background-color: var(--branco);
+  border: 1px solid var(--dourado);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+}
+
+.imagem {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.conteudo {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  flex: 1;
+  text-align: left;
+}
+
+.conteudo a{
+    margin: auto 0 0 0;
+}
+
+.conteudo h3 {
+  color: var(--borgonha);
+  font-size: 1.35rem;
+}
+
+.conteudo p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
