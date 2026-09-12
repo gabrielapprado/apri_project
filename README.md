@@ -47,8 +47,8 @@ Título + linha dourada opcional + descrição opcional. **Não recebe `tom`** �
 Botão de navegação interna (`<Link>` do react-router-dom, sem reload de página).
 
 ```tsx
-<LinkButton to="/como-participar" text="Quero Apoiar →" cor="dourado" />
-<LinkButton to="/login" text="Entrar" cor="vermelho" />
+<LinkButton to="/comoparticipar" text="Quero Apoiar →" cor="dourado" />
+<LinkButton to="/entrar" text="Entrar" cor="vermelho" />
 ```
 
 **Props:**
@@ -63,33 +63,7 @@ Fixos em `App.tsx`, aparecem em toda página. Não recebem props — links são 
 
 ---
 
-## Design Tokens (`index.css`)
 
-Toda cor, fonte e espaçamento é centralizado em `:root`. **Nenhum componente deve ter hexcode, tamanho de fonte ou padding soltos** — sempre usar `var(--nome)`.
-
-```css
-:root {
-  --vermelho: #A62D37;
-  --dourado: #DBAD38;
-  --bege-claro: #FAF7F0;
-  --bege-suave: #F5EBE0;
-  --text: #2A1A1A;
-  --branco: #FFFFFF;
-
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Lato", sans-serif;
-
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 40px;
-  --space-xl: 80px;
-
-  --container-width: 1100px;
-}
-```
-
----
 
 
 - Cuidado com CSS Modules: cada `.module.css` é isolado por padrão (nomes de classe são "hasheados"). As classes `section-title`/`section-description` são exceção proposital, marcadas com `:global()` no `Section.module.css` — não renomeie ou mova essas classes sem entender esse mecanismo, ou a cor do `SectionHeader` para de funcionar silenciosamente.
