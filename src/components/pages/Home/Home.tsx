@@ -27,6 +27,7 @@ function Home(){
                     não executa as obras de restauro e intervenções físicas de forma direta; 
                     sua atuação é de caráter estritamente institucional e gerencial."
                     /> 
+                    <LinkButton cor="dourado" text="Junte-se a nós →" to="/comoparticipar" />
                 </Container>
             </Section>
 
