@@ -1,0 +1,28 @@
+.btn {
+  font-weight: 600;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: var(--font-body);
+  margin: 20px;
+  border-radius: 30px;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+  filter: brightness(110%);
+}
+
+
+.vermelho {
+  background-color: var(--vermelho);
+  border: solid 1.3px var(--dourado);
+  color: var(--branco);
+}
+
+.dourado {
+  background-color: var(--dourado);
+  border: none;
+  color: var(--borgonha); 
+}

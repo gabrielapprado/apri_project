@@ -1,0 +1,89 @@
+.footer {
+  background-color: var(--borgonha);
+  color: var(--wire);
+  padding-top: var(--space-xl);
+}
+
+.colunas {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: var(--space-lg);
+  padding: 0 var(--space-sm) var(--space-lg);
+}
+
+.logo {
+  height: 60px;
+  margin-bottom: var(--space-sm);
+}
+
+.descricao {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.redes {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.redeIcone {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--vermelho);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redeIcone svg {
+  width: 18px;
+  height: 18px;
+  color: var(--dourado);
+}
+
+.redeIcone:hover{
+  filter: brightness(80%);
+}
+
+.titulo {
+  color: var(--dourado);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--wire);
+}
+
+.link:hover {
+  color: var(--dourado);
+}
+
+.itemContato {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.direitos {
+  border-top: 1px solid var(--rose);
+  text-align: center;
+  padding: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}

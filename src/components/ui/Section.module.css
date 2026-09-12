@@ -1,0 +1,41 @@
+.section {
+  width: 100%;
+  padding: var(--space-xl) var(--space-sm);
+  display: flex;
+  justify-content: center;
+}
+
+.vermelho {
+  background-color: var(--vermelho);
+}
+
+.terroso{
+    background-color: var(--terroso);
+}
+
+.claro {
+  background-color: var(--bege-claro);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
+
+.cinza {
+  background-color: var(--cinza);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
+
+.vermelho :global(.section-title),
+.vermelho :global(.section-description) {
+  color: var(--branco);
+}
+
+.claro :global(.section-title),
+.cinza :global(.section-title),
+.terroso :global(.section-title) {
+  color: var(--borgonha);
+}
+
+.claro :global(.section-description),
+.cinza :global(.section-description),
+.terroso :global(.section-description) {
+  color: var(--text);
+}
