@@ -1,75 +1,95 @@
-# React + TypeScript + Vite
+## Componentes Reutilizáveis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### `<Section />`
+Controla o **fundo colorido** de uma faixa inteira da página.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```tsx
+<Section tom="vermelho">...</Section>
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+**Props:**
+- `tom: 'vermelho' | 'terroso' | 'claro' | 'cinza'` — obrigatório, define a cor de fundo
+- `className?: string` — extra opcional
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### `<Container />`
+Centraliza e limita a largura do conteúdo. Usado sempre dentro de uma `Section`.
 
+```tsx
+<Section tom="claro">
+  <Container>...</Container>
+</Section>
 ```
+
+---
+
+### `<SectionHeader />`
+Título + linha dourada opcional + descrição opcional. **Não recebe `tom`** — a cor do texto (`section-title`/`section-description`) é resolvida via CSS global, olhando pra classe `tom` do `Section` mais próximo (por isso essas classes usam `:global()` no `Section.module.css`, não são isoladas por CSS Modules como as outras).
+
+```tsx
+<SectionHeader titulo="Projetos APRI" descricao="Conheça nossos projetos..." />
+<SectionHeader titulo="Cursos" linha={false} />
+```
+
+**Props:**
+- `titulo: string` — obrigatório
+- `descricao?: string` — opcional
+- `linha?: boolean` — opcional, `true` por padrão
+
+⚠️ Sempre usar **dentro** de uma `<Section tom="...">` — sem isso, o texto fica sem cor definida (herda o padrão do body).
+
+⚠️ Não usar quando a seção tiver um layout muito específico (ex: CTA com subtítulo + palavra destacada) — nesses casos, montar direto no `.module.css` da própria página.
+
+---
+
+### `<LinkButton />`
+Botão de navegação interna (`<Link>` do react-router-dom, sem reload de página).
+
+```tsx
+<LinkButton to="/como-participar" text="Quero Apoiar →" cor="dourado" />
+<LinkButton to="/login" text="Entrar" cor="vermelho" />
+```
+
+**Props:**
+- `to: string` — obrigatório
+- `text: string` — obrigatório
+- `cor: 'dourado' | 'vermelho'` — obrigatório
+
+---
+
+### `<Header />` e `<Footer />`
+Fixos em `App.tsx`, aparecem em toda página. Não recebem props — links são fixos dentro do próprio componente. `Header` usa `<NavLink>`, que marca automaticamente o link da rota atual.
+
+---
+
+## Design Tokens (`index.css`)
+
+Toda cor, fonte e espaçamento é centralizado em `:root`. **Nenhum componente deve ter hexcode, tamanho de fonte ou padding soltos** — sempre usar `var(--nome)`.
+
+```css
+:root {
+  --vermelho: #A62D37;
+  --dourado: #DBAD38;
+  --bege-claro: #FAF7F0;
+  --bege-suave: #F5EBE0;
+  --text: #2A1A1A;
+  --branco: #FFFFFF;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 80px;
+
+  --container-width: 1100px;
+}
+```
+
+---
+
+
+- Cuidado com CSS Modules: cada `.module.css` é isolado por padrão (nomes de classe são "hasheados"). As classes `section-title`/`section-description` são exceção proposital, marcadas com `:global()` no `Section.module.css` — não renomeie ou mova essas classes sem entender esse mecanismo, ou a cor do `SectionHeader` para de funcionar silenciosamente.
