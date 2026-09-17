@@ -30,12 +30,6 @@ function Home(){
                     não executa as obras de restauro e intervenções físicas de forma direta; 
                     sua atuação é de caráter estritamente institucional e gerencial."
                     /> 
-
-                </Container>
-            </Section>
-
-            <Section tom={"terroso"}>
-                <Container>
                     <div className={styles.missao}>
                         <h2 className={styles.missao_titulo}>Nossa Missão</h2>
                         <p className={styles.missao_texto}>
@@ -46,17 +40,13 @@ function Home(){
                             aproximam as pessoas do patrimônio cultural da cidade.
                         </p>
                     </div>
-                </Container>
-            </Section>
-
-            <Section tom={"terroso"}>
-                <Container>
                     <SectionHeader titulo="Nossos Valores" />
                     <IconCardGrid />
                     <LinkButton cor="dourado" text="Junte-se a nós →" to="/comoparticipar" />
                 </Container>
-
             </Section>
+
+
             
             <Section tom={"claro"}>
                 <Container>
