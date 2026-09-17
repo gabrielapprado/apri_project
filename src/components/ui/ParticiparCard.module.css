@@ -1,0 +1,64 @@
+.card {
+  position: relative;
+  background-color: var(--branco);
+  border: 1px solid var(--dourado);
+  border-radius: 10px;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  max-width: 480px;
+}
+
+.destaque {
+  border: 2px solid var(--dourado);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  background-color: var(--dourado);
+  color: var(--branco);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--rose-claro, #f5e3e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-xs);
+}
+
+.destaque .iconWrapper {
+  background-color: var(--dourado-claro, #f5e6d3);
+}
+
+.iconWrapper svg {
+  width: 28px;
+  height: 28px;
+  color: var(--borgonha);
+}
+
+.card h3 {
+  color: var(--borgonha);
+  font-size: 1.4rem;
+}
+
+.card p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.6;
+}

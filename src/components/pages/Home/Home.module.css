@@ -30,4 +30,25 @@
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--wire);
+}.missao {
+  background-color: var(--branco);
+  border-radius: 10px;
+  padding: var(--space-lg) var(--space-xl);
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.missao_titulo {
+  color: var(--borgonha);
+  font-size: 1.8rem;
+  margin-bottom: var(--space-sm);
+}
+
+.missao_texto {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
 }

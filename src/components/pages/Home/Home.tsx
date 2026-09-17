@@ -7,7 +7,10 @@ import LinkButton from "../../ui/LinkButton"
 import Footer from "../../layout/Footer"
 import CardGrid from "../../ui/CardGrid"
 import Card from "../../ui/Card"
+import IconCardGrid from "../../ui/IconCardGrid"
+import ParticiparGrid from "../../ui/ParticiparGrid"
 import IgrejaMatriz from "../../../assets/Igreja_matriz_de_Itu.jpg"
+
 
 function Home(){
     return (
@@ -27,10 +30,34 @@ function Home(){
                     não executa as obras de restauro e intervenções físicas de forma direta; 
                     sua atuação é de caráter estritamente institucional e gerencial."
                     /> 
-                    <LinkButton cor="dourado" text="Junte-se a nós →" to="/comoparticipar" />
+
                 </Container>
             </Section>
 
+            <Section tom={"terroso"}>
+                <Container>
+                    <div className={styles.missao}>
+                        <h2 className={styles.missao_titulo}>Nossa Missão</h2>
+                        <p className={styles.missao_texto}>
+                            Promover a preservação do patrimônio histórico, cultural e artístico de Itu,
+                            valorizando a memória coletiva e fortalecendo o vínculo da comunidade com sua
+                            história. Atuamos de forma responsável e transparente, intermediando projetos
+                            de restauro junto aos órgãos competentes e desenvolvendo ações educativas que
+                            aproximam as pessoas do patrimônio cultural da cidade.
+                        </p>
+                    </div>
+                </Container>
+            </Section>
+
+            <Section tom={"terroso"}>
+                <Container>
+                    <SectionHeader titulo="Nossos Valores" />
+                    <IconCardGrid />
+                    <LinkButton cor="dourado" text="Junte-se a nós →" to="/comoparticipar" />
+                </Container>
+
+            </Section>
+            
             <Section tom={"claro"}>
                 <Container>
                     <SectionHeader 
@@ -112,9 +139,11 @@ function Home(){
                 </Container>
             </Section>
 
+
             <Section tom={"claro"}>
                 <Container>
                     <SectionHeader titulo="Como Participar"/>
+                    <ParticiparGrid />
                 </Container>
             </Section>
 
