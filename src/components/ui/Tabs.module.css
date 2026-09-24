@@ -1,0 +1,31 @@
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  border-bottom: 1px solid #e5ddd5;
+}
+
+.tabsButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--wire);
+  transition: color 0.2s ease;
+}
+
+.tabsButtonActive {
+  color: var(--borgonha);
+}
+
+.tabsIndicator {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background: var(--borgonha);
+  transition: left 0.25s ease, width 0.25s ease;
+}
+
