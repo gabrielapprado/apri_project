@@ -7,6 +7,7 @@
 
 .vermelho {
   background-color: var(--vermelho);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
 }
 
 .terroso{
@@ -23,9 +24,12 @@
   box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
 }
 
-.vermelho :global(.section-title),
-.vermelho :global(.section-description) {
+.vermelho :global(.section-title){
   color: var(--branco);
+}
+
+.vermelho :global(.section-description) {
+  color: var(--wire)
 }
 
 .claro :global(.section-title),
