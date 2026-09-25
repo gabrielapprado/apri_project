@@ -1,5 +1,13 @@
+import Footer from "../../layout/Footer"
+import FormLogin from "./FormLogin"
+
 function Login(){
-    return <h1>Entrar</h1>
+    return (
+        <div>
+            <FormLogin />
+            <Footer />
+        </div>
+    )
 }
 
 export default Login
