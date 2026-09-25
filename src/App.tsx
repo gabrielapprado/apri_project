@@ -10,6 +10,8 @@ import Parceiros from './components/pages/Parceiros/Parceiros'
 import Sobre from './components/pages/Sobre/Sobre'
 import Contato from './components/pages/Contato/Contato'
 import Login from './components/pages/Login/Login'
+import AreaAdministrador from './components/pages/AreaAdministrador/AreaAdministrador'
+import AreaAssociados from './components/pages/AreaAssociados/AreaAssociaos'
 
 function App() {
   
@@ -27,6 +29,8 @@ function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato/>} />
           <Route path="/entrar" element={<Login/>} />
+          <Route path='/administrador'element={<AreaAdministrador/>} />
+          <Route path='/associados' element={<AreaAssociados/>} />
         </Routes>
       </main>
     </div>

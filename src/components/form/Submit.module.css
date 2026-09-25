@@ -1,0 +1,51 @@
+.btn {
+    width: 100%;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 16px;
+
+    background-color: var(--dourado);
+
+    color: var(--borgonha);
+
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    margin-top: 5px;
+
+}
+
+.btn:hover {
+  filter: brightness(110%);
+}
+
+
+.vermelho {
+  background-color: var(--vermelho);
+  border: solid 1.3px var(--dourado);
+  color: var(--branco);
+}
+
+.dourado {
+  background-color: var(--dourado);
+  border: none;
+  color: var(--borgonha); 
+}
+
+.rose{
+  background-color: transparent;
+  border: solid 1.3px var(--rose);
+  color: var(--rose);
+}
+
+.rose:hover{
+  background-color: var(--rose);
+  border: solid 1.3px var(--borgonha);
+  color: var(--branco);
+}
