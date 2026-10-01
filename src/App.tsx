@@ -11,7 +11,7 @@ import Sobre from './components/pages/Sobre/Sobre'
 import Contato from './components/pages/Contato/Contato'
 import Login from './components/pages/Login/Login'
 import AreaAdministrador from './components/pages/AreaAdministrador/AreaAdministrador'
-import AreaAssociados from './components/pages/AreaAssociados/AreaAssociaos'
+import AreaAssociados from "./components/pages/AreaAssociados/AreaAssociados";
 
 function App() {
   
