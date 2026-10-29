@@ -29,7 +29,7 @@
 }
 
 .vermelho :global(.section-description) {
-  color: var(--wire)
+  color: var(--rosa-creme)
 }
 
 .claro :global(.section-title),

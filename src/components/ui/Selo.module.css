@@ -1,0 +1,17 @@
+.selo {
+  position: absolute;
+  top: 16px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.esquerda { left: 16px; }
+.direita  { right: 16px; }
+
+.verde   { background-color: #2e9e5b; }
+.azul { background-color: #3a6fd9; }
+.laranja { background-color: #d9803a; }
+.escuro  { background-color: rgba(0, 0, 0, 0.55); }

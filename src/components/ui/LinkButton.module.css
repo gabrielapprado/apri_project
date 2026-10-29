@@ -38,3 +38,14 @@
   border: solid 1.3px var(--borgonha);
   color: var(--branco);
 }
+.ambar    { 
+  background-color: var(--ambar); 
+  border: none;
+  color: var(--branco);
+}
+.vinho { 
+  background-color: var(--rose);
+  border: none;
+  color: var(--branco);
+
+}
