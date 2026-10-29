@@ -1,18 +1,26 @@
 .card {
   background-color: var(--branco);
-  border: 1px solid var(--dourado);
+  border: none;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   width: 360px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(120, 80, 20, 0.10);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
+.imagemWrapper {
+  position: relative;
+}
 .imagem {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  display: block;
 }
 
 .conteudo {

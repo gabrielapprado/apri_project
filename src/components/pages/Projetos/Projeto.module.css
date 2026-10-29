@@ -1,0 +1,23 @@
+.botoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.descricao {
+  display: grid;
+  gap: 16px;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.descricao p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.descricao strong {
+  font-weight: 700;
+}
