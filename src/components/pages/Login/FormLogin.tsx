@@ -86,9 +86,9 @@ function FormLogin(){
                 </form>
 
                 <p className={styles.cadastroLogin}>
-                    Não possui cadastro?{" "}
-                    <Link to="/cadastro" className={styles.linkCadastro}>
-                        Cadastre-se
+                    Ainda não faz parte?{" "}
+                    <Link to="/comoparticipar" className={styles.linkCadastro}>
+                        Venha participar
                     </Link>
                 </p>
             </div>
