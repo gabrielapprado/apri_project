@@ -1,5 +1,5 @@
 import styles from './Selo.module.css'
-export type VarianteSelo = 'verde' | 'laranja' | 'azul' | 'escuro'
+export type VarianteSelo = 'verde' | 'laranja' | 'azul' | 'escuro' |'marrom'
 interface SeloProps {
   texto: string
   variante?: VarianteSelo
