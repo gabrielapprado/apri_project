@@ -1,0 +1,22 @@
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xs) 0 0 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.icone {
+  color: var(--vermelho);
+  flex-shrink: 0;
+}
