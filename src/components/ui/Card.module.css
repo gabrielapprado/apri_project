@@ -49,3 +49,17 @@
   line-height: 1.5;
   flex: 1;
 }
+
+.localizacao {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.localizacao svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
