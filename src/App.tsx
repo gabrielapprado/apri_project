@@ -16,6 +16,7 @@ import BemTombadoDetalhe from './components/pages/CentroConteudos/BemTombadoDeta
 import CBensTombadosTab from './components/pages/CentroConteudos/CBensTombadosTab'
 import CDinamicosTab from './components/pages/CentroConteudos/CDinamicosTab'
 import CInstitucionaisTab from './components/pages/CentroConteudos/CInstitucionaisTab'
+import ProjetoResDetalhes from './components/pages/Projetos/ProjetoResDetalhes'
 
 function App() {
   
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projetos" element={<Projetos />} />
+          <Route path="/projetos/restauro/:id" element={<ProjetoResDetalhes />} />
           <Route path="/cursos" element={<Cursos />} />
 
           <Route path="/centroconteudos" element={<CentroConteudos />}>
