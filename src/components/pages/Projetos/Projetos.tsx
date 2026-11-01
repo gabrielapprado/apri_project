@@ -55,7 +55,7 @@ function Projetos(){
                             titulo={projeto.name}
                             descricao={projeto.desc}
                             botaoTexto="Leia a História"
-                            botaoTo={`/projetos/${projeto.id}`}
+                            botaoTo={`/projetos/restauro/${projeto.id}`}
                             selo={<Selo texto={`Desde ${projeto.year}`} variante='escuro' posicao='direita'/>}
                         />
                     ))}
