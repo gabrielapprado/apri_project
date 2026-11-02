@@ -1,8 +1,8 @@
+import { useEffect, useRef, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { LuCircleCheckBig, LuArrowRight } from 'react-icons/lu'
 import { projetosEducacionais } from '../../../data/projetosEducacionais'
 import styles from './ProjetoEduDetalhes.module.css'
-import { useEffect, useRef, useState } from 'react'
 import Footer from '../../layout/Footer'
 
 const moeda = (valor: number) =>
@@ -12,19 +12,16 @@ const moeda = (valor: number) =>
     maximumFractionDigits: 0,
   })
 
-
 function paragrafos(texto: string) {
   return texto.split('\n').filter((p) => p.trim() !== '')
 }
 
-function ProjetoEduDetalhes(){
-  const {id} = useParams()
+function ProjetoEduDetalhes() {
+  const { id } = useParams()
   const projeto = projetosEducacionais.find((p) => p.id === Number(id))
-  
 
   const cardRef = useRef<HTMLDivElement>(null)
   const [animar, setAnimar] = useState(false)
-
   const [enviado, setEnviado] = useState(false)
 
   useEffect(() => {
@@ -47,11 +44,10 @@ function ProjetoEduDetalhes(){
 
   const aoEnviar = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const dados = new FormData(e.currentTarget)
-    console.log(Object.fromEntries(dados)) // troque pela chamada à sua API
+    // api futura
     setEnviado(true)
   }
-    
+
   if (!projeto) {
     return (
       <section className={styles.notFound}>
@@ -60,7 +56,6 @@ function ProjetoEduDetalhes(){
       </section>
     )
   }
-
 
   return (
     <article className={styles.page}>
@@ -103,32 +98,26 @@ function ProjetoEduDetalhes(){
 
       <section className={styles.intervencao}>
         <div className={styles.intervencaoInner}>
-          
-
-          <div className={styles.intervencaoText}>
-            <span className={styles.eyebrow}>Por que este projeto importa?</span>
-            <h2>Como a APRI atua neste projeto</h2>
-            {paragrafos(projeto.importancia).map((par, i) => (
-              <p key={i}>{par}</p>
-            ))}
-          </div>
+          <span className={styles.eyebrow}>Por que este projeto importa?</span>
+          <h2>A importância de {projeto.name}</h2>
+          {paragrafos(projeto.importancia).map((par, i) => (
+            <p key={i}>{par}</p>
+          ))}
         </div>
       </section>
 
       <section className={styles.ficha}>
-
-        <div className={styles.fichaItem}>
+        <div>
           <span className={styles.fichaLabel}>Categoria</span>
           <p className={styles.fichaValue}>Projeto Educacional</p>
         </div>
 
-         <div className={styles.fichaItem}>
+        <div>
           <span className={styles.fichaLabel}>Status</span>
           <p className={styles.fichaValue}>{projeto.status}</p>
         </div>
       </section>
 
-      
       <section className={styles.finance}>
         <div>
           <span className={styles.eyebrow}>Transparência financeira</span>
@@ -172,7 +161,6 @@ function ProjetoEduDetalhes(){
         </div>
       </section>
 
-     
       <section className={styles.interesse}>
         {enviado ? (
           <div className={styles.formCard}>
@@ -220,8 +208,6 @@ function ProjetoEduDetalhes(){
       </section>
 
       <Footer />
-     
-      
     </article>
   )
 }
