@@ -1,4 +1,4 @@
-import styles from './Projeto.module.css'
+import styles from './Projetos.module.css'
 import Container from "../../ui/Container"
 import Section from "../../ui/Section"
 import SectionHeader from "../../ui/SectionHeader"
@@ -81,7 +81,7 @@ function Projetos(){
                                 titulo={projeto.name}
                                 descricao={projeto.desc}
                                 botaoTexto="Seja Patrono" 
-                                botaoTo='/projetos/patrono'
+                                botaoTo={`/projetos/educacionais/${projeto.id}`}
                                 selo={<Selo texto={projeto.status} variante={varianteDoStatus[projeto.status]} />}
                                 rodape={<Arrecadacao arrecadado={projeto.raised} meta={projeto.goal} patronos={projeto.patronos}/>}
                             />
