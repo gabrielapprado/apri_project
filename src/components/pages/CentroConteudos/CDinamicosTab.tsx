@@ -3,39 +3,40 @@ import Section from "../../ui/Section"
 import SectionHeader from "../../ui/SectionHeader"
 import Card from "../../ui/Card"
 import CardGrid from "../../ui/CardGrid"
-import IgrejaMatriz from "../../../assets/Igreja_matriz_de_Itu.jpg"
+import type { categoriaPosts } from "../../../data/blogPosts"
+import type { VarianteSelo } from "../../ui/Selo"
+import { blogPosts } from "../../../data/blogPosts"
+import Selo from "../../ui/Selo"
+import { eventos } from "../../../data/eventosPosts"
+import InfoEventos from "../../ui/InfoEventos"
+
+const VarianteCategoriaPost: Record<categoriaPosts, VarianteSelo> ={
+    'Arquitetura':'azul',
+    'História':'marrom',
+    'Notícias':'laranja',
+    'Preservação':'verde'
+}
+
 
 function CDinamicosTab(){
     return(
         <div>
             <Section tom="claro">
                 <Container>
-                    <SectionHeader titulo="Blog e Notícias" descricao="Artigos, novidades e atualizações sobre patrimônio e cultura" linha={false}/>
+                    <SectionHeader titulo="Blog e Notícias" descricao="Blogs, novidades e atualizações sobre patrimônio e cultura" linha={false}/>
                     <CardGrid>
-                        <Card 
-                            imagem={IgrejaMatriz} 
-                            imagemAlt="Fotografia Igreja Matriz"
-                            titulo="História e Patrimônio de Itu"
-                            descricao="Conheça a trajetória histórica e os principais patrimônios da cidade"
-                            botaoTexto="Leia Mais →"
-                            botaoTo="/cursos"
-                        />
-                        <Card 
-                            imagem={IgrejaMatriz} 
-                            imagemAlt="Fotografia Igreja Matriz"
-                            titulo="Introdução a Conservação"
-                            descricao="Aprenda conceitos básicos sobre preservação e conservação patrimonial"
-                            botaoTexto="Leia Mais →"
-                            botaoTo="/cursos"
-                        />
-                        <Card 
-                            imagem={IgrejaMatriz} 
-                            imagemAlt="Fotografia Igreja Matriz"
-                            titulo="Arquitetura Colonial Paulista"
-                            descricao="Entenda as características da arquitetura histórica do interior de São Paulo"
-                            botaoTexto="Leia Mais →"
-                            botaoTo="/cursos"
-                        />
+                        {blogPosts.map((p)=>(
+                            <Card
+                                key={p.id}
+                                imagem={p.img}
+                                imagemAlt={p.titulo}
+                                titulo={p.titulo}
+                                descricao={p.desc}
+                                botaoTexto="Leia mais →"
+                                botaoTo={`/centroconteudos/dinamicos/${p.id}`}
+                                selo={<Selo texto={p.categoria} variante={VarianteCategoriaPost[p.categoria]} posicao="direita" />}    
+                            />
+                        ))}
                     </CardGrid>
                 </Container>
             </Section>
@@ -44,30 +45,19 @@ function CDinamicosTab(){
                 <Container>
                     <SectionHeader titulo="Próximos Eventos" descricao="Participe de palestras, visitas e workshops promovidos pela APRI"/>
                     <CardGrid>
-                        <Card 
-                            imagem={IgrejaMatriz} 
-                            imagemAlt="Fotografia Igreja Matriz"
-                            titulo="História e Patrimônio de Itu"
-                            descricao="Conheça a trajetória histórica e os principais patrimônios da cidade"
-                            botaoTexto="Inscreva-se →"
-                            botaoTo="/cursos"
-                        />
-                        <Card 
-                            imagem={IgrejaMatriz} 
-                            imagemAlt="Fotografia Igreja Matriz"
-                            titulo="Introdução a Conservação"
-                            descricao="Aprenda conceitos básicos sobre preservação e conservação patrimonial"
-                            botaoTexto="Inscreva-se →"
-                            botaoTo="/cursos"
-                        />
-                        <Card 
-                            imagem={IgrejaMatriz} 
-                            imagemAlt="Fotografia Igreja Matriz"
-                            titulo="Arquitetura Colonial Paulista"
-                            descricao="Entenda as características da arquitetura histórica do interior de São Paulo"
-                            botaoTexto="Inscreva-se →"
-                            botaoTo="/cursos"
-                        />
+                        {eventos.map((e)=>(
+                            <Card 
+                                key={e.id}
+                                imagem={e.img}
+                                imagemAlt={e.titulo}
+                                titulo={e.titulo}
+                                botaoTexto="Inscreva-se →"
+                                botaoTo={`/centroconteudos/dinamicos/eventos/${e.id}`}
+                                descricao=""
+                                rodape={<InfoEventos localizacao={e.local} vagas={e.vagas} data={e.data} />}
+                                
+                            />
+                        ))}
                     </CardGrid>
                 </Container>
             </Section>

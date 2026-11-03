@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { bensTombados } from '../../../data/bensTombados'
+import DetalheConteudo from '../../ui/DetalheConteudo'
+import Footer from '../../layout/Footer'
 
 function BemTombadoDetalhe() {
   const { id } = useParams()
@@ -15,18 +17,29 @@ function BemTombadoDetalhe() {
   }
 
   return (
-    <article>
-      <Link to="/centroconteudos/benstombados">← Voltar</Link>
-      <h1>{bem.titulo}</h1>
-      <p>{bem.endereco}</p>
-      <h2>Histórico</h2>
-      <p>{bem.historico}</p>
-      <h2>Situação de proteção</h2>
-      <p>{bem.situacaoTexto}</p>
-      <a href={bem.linkOficial} target="_blank" rel="noopener noreferrer">
-        Site oficial ({bem.orgao})
-      </a>
-    </article>
+    <div>
+      <DetalheConteudo
+        voltarTo="/centroconteudos/benstombados"
+        voltarTexto="Voltar para Bens Tombados"
+        categoria={`${bem.esfera} • ${bem.orgao}`}
+        titulo={bem.titulo}
+        localizacao={bem.endereco}
+        imagem={bem.img}
+        imagemAlt={bem.titulo}
+        secaoTitulo="Histórico"
+        texto={bem.historico}
+        destaque={{
+            titulo: 'Situação de Tombamento',
+            texto: bem.situacaoTexto,
+            acao: (
+                <a href={bem.linkOficial} target="_blank" rel="noopener noreferrer">
+                    Consultar informação oficial
+                </a>
+            ),
+        }}
+      />
+      <Footer />
+    </div>
   )
 }
 
