@@ -50,16 +50,18 @@
   flex: 1;
 }
 
-.localizacao {
+.conteudo .localizacao {
   display: flex;
   align-items: flex-start;
   gap: 0.4rem;
   margin: 0.25rem 0 0.75rem;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: #8a7f7f;
+  flex: none;
 }
 
-.localizacao svg {
+.conteudo .localizacao svg {
   flex-shrink: 0;
   margin-top: 0.15rem;
 }

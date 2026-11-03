@@ -18,6 +18,9 @@ import CDinamicosTab from './components/pages/CentroConteudos/CDinamicosTab'
 import CInstitucionaisTab from './components/pages/CentroConteudos/CInstitucionaisTab'
 import ProjetoResDetalhes from './components/pages/Projetos/ProjetoResDetalhes'
 import ProjetoEduDetalhes from './components/pages/Projetos/ProjetoEduDetalhes'
+import PostagensDetalhes from './components/pages/CentroConteudos/PostagensDetalhes'
+import CursoDetalhes from './components/pages/Cursos/CursosDetalhes'
+import EventosDetalhes from './components/pages/CentroConteudos/EventosDetalhes'
 
 function App() {
   
@@ -31,6 +34,7 @@ function App() {
           <Route path="/projetos/restauro/:id" element={<ProjetoResDetalhes />} />
           <Route path="/projetos/educacionais/:id" element={<ProjetoEduDetalhes/>} />
           <Route path="/cursos" element={<Cursos />} />
+          <Route path='/cursos/:id' element={<CursoDetalhes/>}/>
 
           <Route path="/centroconteudos" element={<CentroConteudos />}>
             <Route index element={<Navigate to="institucionais" replace />} />
@@ -39,6 +43,9 @@ function App() {
             <Route path="benstombados" element={<CBensTombadosTab />} />
           </Route>
           <Route path="/centroconteudos/benstombados/:id" element={<BemTombadoDetalhe />} />
+          <Route path="/centroconteudos/dinamicos/:id" element={<PostagensDetalhes />} />
+          <Route path="/centroconteudos/dinamicos/eventos/:id" element={<EventosDetalhes/>} />
+
 
           <Route path="/comoparticipar" element={<ComoParticipar />} />
           <Route path="/parceiros" element={<Parceiros />} />

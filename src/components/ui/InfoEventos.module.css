@@ -1,0 +1,41 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.info p {
+  margin: 0;
+  flex: none;
+}
+
+.info .data,
+.info .localizacao {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.info .data svg,
+.info .localizacao svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.info .data {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--vermelho);
+}
+
+.info .localizacao {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.info .vagas {
+  font-size: 1rem;
+  color:  #8a7f7f;
+  font-weight: 600;
+}

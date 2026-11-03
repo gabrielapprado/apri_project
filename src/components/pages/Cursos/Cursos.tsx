@@ -58,7 +58,7 @@ function Cursos(){
                                 titulo={curso.titulo}
                                 descricao={curso.desc}
                                 botaoTexto="Inscrever-se"
-                                botaoTo='/contato'
+                                botaoTo={`/cursos/${curso.id}`}
                                 selo={<Selo texto={curso.categoria} posicao="direita" variante={VarianteCategoria[curso.categoria]} />}
                                 rodape={<InfoCurso duracao={curso.duracao} vagas={curso.vagas} proximaTurma={curso.proximaTurma} />}
                             />

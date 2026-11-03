@@ -1,0 +1,246 @@
+.gridLink {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    padding: 2rem;
+    align-items: stretch;
+}
+.gridInsticucional {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    padding: 2rem;
+    align-items: stretch;
+}
+
+.card {
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid rgba(181, 140, 30, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    box-shadow: 0 4px 16px rgba(181, 140, 30, 0.15);
+    min-height: 150px;
+    cursor: pointer;
+}
+
+.card .titulo {
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: var( --font-heading);
+    color: var(--borgonha);
+}
+
+
+.card p {
+    text-align: left;
+    font-size: 14px;
+    color: #6b6b6b;
+    font-family: var(--font-body);
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+
+
+.cardLink {
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid rgba(181, 140, 30, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-shadow: 0 4px 16px rgba(181, 140, 30, 0.15);
+
+    text-decoration: none;
+    color: inherit;
+
+    min-height: 150px;
+}
+
+.cardLink:visited {
+    color: inherit;
+}
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--borgonha);
+}
+
+.cardLink h3 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.top svg {
+    color: var(--vermelho);
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.cardLink p {
+    text-align: left;
+    font-size: 14px;
+    color: #6b6b6b;
+    font-family: var(--font-body);
+    margin: 0;
+    flex: 1;
+    line-height: 1.6;
+}
+
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    background-color: var(--terroso);
+    color: var(--vermelho);
+
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.cadeado {
+    color: var(--vermelho);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.data {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+    padding: 20px;
+}
+
+.modal {
+    position: relative;
+    background: #ffffff;
+    border-radius: 14px;
+
+    width: 100%;
+    max-width: 430px;
+    padding: 40px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.fechar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-size: 24px;
+    color: var(--vermelho);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lockModal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--terroso);
+    border-radius: 50px;
+}
+
+.iconeModal {
+    font-size: 42px;
+    color: var(--vermelho);
+}
+
+.modal h2 {
+    font-size: 21px;
+    color: var(--borgonha);
+    margin: 0;
+}
+
+.modal p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6b6b6b;
+    margin: 0;
+}
+
+.linkAssociar {
+    font-size: 1rem;
+    color: var(--vermelho);
+    line-height: 1.5;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+
+.linkAssociar:hover {
+    opacity: 0.75;
+}
+
+@media (max-width: 650px) {
+    .gridLink {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .gridInsticucional {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}

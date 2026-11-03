@@ -1,0 +1,135 @@
+.eyebrow {
+  display: block;
+  color: var(--vermelho);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.interesse {
+  padding: var(--space-xl) var(--space-md);
+  background: var(--terroso);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+}
+
+
+.formCard {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--branco);
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+.form {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.form input {
+  padding: 14px 18px;
+  border: 1px solid var(--wire);
+  border-radius: 12px;
+  background: var(--branco);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 400;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: var(--vermelho);
+  box-shadow: 0 0 0 3px rgba(166, 45, 55, 0.15);
+}
+
+
+.form input[readonly] {
+  background: var(--terroso);
+  border-color: transparent;
+  color: var(--borgonha);
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: default;
+}
+
+.form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-xs);
+  padding: 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.form small {
+  text-align: center;
+  color: var(--backgroundbtnlight);
+  font-size: 1rem;
+}
+
+.formCard:not(.form) {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.check {
+  color: var(--vermelho);
+}
+
+.formCard h2 {
+  font-size: 2rem;
+  color: var(--borgonha);
+}
+
+.formCard p {
+  color: var(--backgroundbtnlight);
+  font-size: 1.1rem;
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formCard {
+  animation: surgir 0.6s ease both;
+}
+
+@supports (animation-timeline: view()) {
+  .formCard {
+    animation: surgir linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .formCard {
+    animation: none;
+  }
+}
