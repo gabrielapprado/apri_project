@@ -3,6 +3,7 @@ import InputForm from "../../form/InputForm"
 import Submit from "../../form/Submit"
 import styles from "./FormLogin.module.css"
 import { Link, useNavigate } from "react-router-dom"
+import { getUsuarios } from "../../../services/usuarios"
 
 function FormLogin(){
 
@@ -11,12 +12,9 @@ function FormLogin(){
         senha: ""
     })
 
-    const navigate = useNavigate()
+    const [erro, setErro] = useState("")
 
-    const usuarios = [
-        { usuario: "administrador@email.com", senha: "1234", tipo: "admin" },
-        { usuario: "associado@email.com", senha: "1234", tipo: "associado" }
-    ]
+    const navigate = useNavigate()
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target
@@ -30,20 +28,23 @@ function FormLogin(){
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
+        const usuarios = getUsuarios()
+
         const usuarioEncontrado = usuarios.find(usuario =>
-            form.usuario === usuario.usuario &&
+            form.usuario.trim().toLowerCase() === usuario.usuario.toLowerCase() &&
             form.senha === usuario.senha
         )
 
         if (!usuarioEncontrado) {
-            console.log("Email ou senha incorretos");
+            setErro("Email ou senha incorretos")
             return;
         }
 
+        setErro("")
         console.log("Login realizado!");
         console.log(usuarioEncontrado);
 
-        if(usuarioEncontrado.tipo=== "admin"){
+        if(usuarioEncontrado.tipo === "admin"){
             navigate("/administrador")
         }else{
             navigate("/associados")
@@ -79,6 +80,14 @@ function FormLogin(){
                         onChange={handleChange}
                         required={true}
                     />
+
+                    <div className={styles.esqueciSenha}>
+                        <Link to="/esqueci-senha" className={styles.linkCadastro}>
+                            Esqueceu a senha?
+                        </Link>
+                    </div>
+
+                    {erro && <p className={styles.erro}>{erro}</p>}
 
                     <div className={styles.submitPosition}>
                         <Submit text="Entrar" cor="dourado" />
