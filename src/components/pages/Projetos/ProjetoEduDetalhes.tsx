@@ -192,7 +192,7 @@ function ProjetoEduDetalhes() {
 
             <label>
               Telefone/WhatsApp *
-              <input type="tel" name="telefone" placeholder="(11) 99999-9999" required />
+              <input type="tel" name="telefone" pattern="^\(\d{2}\)\s\d{5}-\d{4}$"  placeholder="(11) 99999-9999" required />
             </label>
 
             <button type="submit">

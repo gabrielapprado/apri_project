@@ -73,7 +73,7 @@ function CursoDetalhes(){
             
                         <label>
                           Telefone/WhatsApp *
-                          <input type="tel" name="telefone" placeholder="(11) 99999-9999" required />
+                          <input type="tel" name="telefone" placeholder="(11) 99999-9999" pattern="^\(\d{2}\)\s\d{5}-\d{4}$"  required />
                         </label>
             
                         <button type="submit">

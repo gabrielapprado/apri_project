@@ -195,7 +195,7 @@ function FormEsqueciSenha() {
                             <button
                                 type="button"
                                 className={styles.botaoDourado}
-                                onClick={() => navigate("/login")}
+                                onClick={() => navigate("/entrar")}
                             >
                                 Ir para o login
                             </button>
@@ -205,7 +205,7 @@ function FormEsqueciSenha() {
 
                 {etapa !== "sucesso" && (
                     <p className={styles.rodape}>
-                        <Link to="/login" className={styles.linkCadastro}>
+                        <Link to="/entrar" className={styles.linkCadastro}>
                             Voltar para o login
                         </Link>
                     </p>
