@@ -10,6 +10,7 @@ import Parceiros from './components/pages/Parceiros/Parceiros'
 import Sobre from './components/pages/Sobre/Sobre'
 import Contato from './components/pages/Contato/Contato'
 import Login from './components/pages/Login/Login'
+import EsqueciSenha from "./components/pages/EsqueciSenha/EsqueciSenha"
 import AreaAdministrador from './components/pages/AreaAdministrador/AreaAdministrador'
 import AreaAssociados from "./components/pages/AreaAssociados/AreaAssociados";
 import BemTombadoDetalhe from './components/pages/CentroConteudos/BemTombadoDetalhe'
@@ -52,6 +53,7 @@ function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/entrar" element={<Login />} />
+          <Route path="/esqueci-senha" element={<EsqueciSenha />} />
           <Route path="/administrador" element={<AreaAdministrador />} />
           <Route path="/associados" element={<AreaAssociados />} />
         </Routes>
