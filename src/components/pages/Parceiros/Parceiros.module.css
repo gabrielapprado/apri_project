@@ -1,0 +1,123 @@
+.destaques {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 300px));
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.destaque {
+  background-color: var(--branco);
+  border-radius: 10px;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(120, 80, 20, 0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.destaque:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 8px 20px rgba(0, 0, 0, 0.10),
+    0 18px 40px rgba(120, 80, 20, 0.16);
+}
+
+.destaqueIcone {
+  color: var(--vermelho);
+  background-color: var(--terroso);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.destaque h3 {
+  color: var(--borgonha);
+  font-size: 1.35rem;
+  min-height: 2.4em;
+}
+
+
+.destaque p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .destaques {
+    grid-template-columns: 1fr;
+  }
+}
+
+.parceirosGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.parceiroCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: var(--space-sm);       
+  padding: var(--space-md);   
+  background-color: var(--branco);
+  border-radius: 10px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(120, 80, 20, 0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.parceiroCard h3 {
+  color: var(--borgonha);
+  font-size: 1rem;         
+  line-height: 1.25;
+  min-height: calc(1.25em * 3); 
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.parceiroCard:hover{
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 8px 20px rgba(0, 0, 0, 0.10),
+    0 18px 40px rgba(120, 80, 20, 0.16);
+}
+
+
+@media (max-width: 800px) {
+  .parceirosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.iconDestaqueDourado{
+  color: var(--dourado);
+  background-color: color-mix(in srgb, var(--dourado) 30%, transparent);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
