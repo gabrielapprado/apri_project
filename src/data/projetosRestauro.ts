@@ -33,7 +33,7 @@ Além disso, a APRI trabalha na articulação institucional para apresentar as n
     id: 2,
     name: "Antiga Escola de Itu",
     year: "1912",
-    desc: "A Escola Estadual Visconde de Taunay, fundada em 1912, foi a primeira instituição de ensino público de Itu. Formou gerações de itueanos.",
+    desc: "A Escola Estadual Visconde de Taunay, fundada em 1912, foi a primeira instituição de ensino público de Itu. Formou gerações de ituanos.",
     img: "https://images.unsplash.com/photo-1668163205979-d808f8ed0080?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
     history: `Fundada em 1912, a Escola Estadual Visconde de Taunay representa um marco na história da educação pública de Itu. Sua criação acompanhou um período de expansão das instituições de ensino e de fortalecimento das políticas educacionais no interior paulista.
 
