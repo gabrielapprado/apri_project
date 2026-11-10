@@ -1,0 +1,227 @@
+.gridSobre{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 300px));
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.atuacao{
+  margin-top: var(--space-sm);
+  background-color: var(--branco);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(120, 80, 20, 0.10);
+}
+
+.atuacao p{
+  margin: 0;
+  max-width: 100ch;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #555555;
+}
+.atuacaoHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.atuacaoIcone {
+  color: var(--vermelho);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.atuacaoHeader h3 {
+  margin: 0;
+  color: var(--borgonha);
+  font-size: 1.5rem;
+}
+
+.estruturaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  align-items: start;
+  text-align: left; 
+  margin-top: var(--space-lg);
+}
+
+.estruturaColuna {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.estruturaCard {
+  background-color: var(--branco);
+  border-radius: 16px;
+  padding: var(--space-lg);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(120, 80, 20, 0.10);
+}
+
+.estruturaTitulo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--vermelho);
+  margin-bottom: var(--space-md);
+}
+
+.estruturaLista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.diretorItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  background-color: var(--terroso);
+  border-radius: 12px;
+  padding: var(--space-md) var(--space-md);
+}
+
+.diretorIcone {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--vermelho);
+}
+
+.diretorCargo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.diretorNome {
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.membroItem {
+  background-color: var(--terroso);
+  border-radius: 8px;
+  padding: 10px var(--space-sm);
+  color: var(--text);
+}
+
+.email {
+  display: inline-block;
+  color: var(--ambar);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.estruturaColuna .email {
+  margin-top: var(--space-md);
+}
+
+.email:hover {
+  text-decoration: underline;
+}
+
+.destaques {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 360px));
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.destaque {
+  margin-top: var(--space-md);
+  background-color: var(--branco);
+  border-radius: 10px;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(120, 80, 20, 0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.destaque:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 8px 20px rgba(0, 0, 0, 0.10),
+    0 18px 40px rgba(120, 80, 20, 0.16);
+}
+
+.destaqueIcone {
+  color: var(--vermelho);
+  background-color: var(--terroso);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.destaque h3 {
+  color: var(--borgonha);
+  font-size: 1.35rem;
+  min-height: 2.4em;
+}
+
+
+.destaque p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  flex: 1; 
+}
+
+.btnDownload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--dourado);
+  color: var(--borgonha);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.btnDownload:hover {
+  background-color: color-mix(in srgb, var(--dourado) 80%, transparent); 
+  transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+  .estruturaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .estruturaCard {
+    padding: var(--space-md);
+  }
+}

@@ -8,6 +8,7 @@ import styles from "./Parceiros.module.css"
 import CardParceiros from "./CardParceiros"
 import LinkButton from "../../ui/LinkButton"
 import Footer from "../../layout/Footer"
+import CardApresentacao from "../../ui/CardApresentacao"
 
 function Parceiros(){
 
@@ -58,11 +59,12 @@ function Parceiros(){
                     <SectionHeader titulo="Tipos de Parceiros"  />
                      <div className={styles.destaques}>
                         {tiposParceiros.map((p) => (
-                        <div key={p.id} className={styles.destaque}>
-                            <div className={styles.destaqueIcone}>{p.icon}</div>
-                            <h3>{p.title}</h3>
-                            <p>{p.desc}</p>
-                        </div>
+                        <CardApresentacao
+                            key={p.id}
+                            titulo={p.title}
+                            desc={p.desc}
+                            icon={p.icon}
+                        />
                         ))}
                     </div>
                 </Container>
