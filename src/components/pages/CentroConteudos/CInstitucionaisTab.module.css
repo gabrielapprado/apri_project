@@ -1,24 +1,19 @@
-.gridLink {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-sm);
-    padding: 2rem;
-    align-items: stretch;
-}
+.gridLink,
 .gridInsticucional {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* minmax(0) impede estouro */
     gap: var(--space-sm);
-    padding: 2rem;
+    padding: clamp(1rem, 4vw, 2rem);
     align-items: stretch;
 }
 
 .card {
     box-sizing: border-box;
+    min-width: 0;
     background: #ffffff;
     border: 1px solid rgba(181, 140, 30, 0.3);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
 
     display: flex;
     flex-direction: column;
@@ -31,12 +26,12 @@
 
 .card .titulo {
     text-align: left;
-    font-size: 17px;
+    font-size: clamp(16px, 2vw, 17px);
     font-weight: 600;
-    font-family: var( --font-heading);
+    font-family: var(--font-heading);
     color: var(--borgonha);
+    overflow-wrap: break-word;
 }
-
 
 .card p {
     text-align: left;
@@ -45,17 +40,16 @@
     font-family: var(--font-body);
     margin: 0;
     line-height: 1.6;
+    overflow-wrap: break-word;
 }
-
-
-
 
 .cardLink {
     box-sizing: border-box;
+    min-width: 0;
     background: #ffffff;
     border: 1px solid rgba(181, 140, 30, 0.3);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
 
     display: flex;
     flex-direction: column;
@@ -72,6 +66,7 @@
 .cardLink:visited {
     color: inherit;
 }
+
 .top {
     display: flex;
     align-items: center;
@@ -81,10 +76,12 @@
 }
 
 .cardLink h3 {
+    min-width: 0; 
     text-align: left;
-    font-size: 20px;
+    font-size: clamp(17px, 2.5vw, 20px);
     font-weight: 500;
     margin: 0;
+    overflow-wrap: break-word;
 }
 
 .top svg {
@@ -101,13 +98,14 @@
     margin: 0;
     flex: 1;
     line-height: 1.6;
+    overflow-wrap: break-word;
 }
-
 
 .info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-wrap: wrap; 
+    gap: 8px 10px;
 }
 
 .selo {
@@ -152,17 +150,21 @@
     justify-content: center;
 
     z-index: 9999;
-    padding: 20px;
+    padding: clamp(12px, 4vw, 20px);
+    box-sizing: border-box;
 }
 
 .modal {
     position: relative;
+    box-sizing: border-box;
     background: #ffffff;
     border-radius: 14px;
 
     width: 100%;
     max-width: 430px;
-    padding: 40px 30px;
+    max-height: 100%;       
+    overflow-y: auto;       
+    padding: clamp(32px, 6vw, 40px) clamp(20px, 5vw, 30px);
 
     display: flex;
     flex-direction: column;
@@ -173,7 +175,6 @@
 
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
-
 
 .fechar {
     position: absolute;
@@ -192,10 +193,11 @@
     justify-content: center;
 }
 
-.lockModal{
+.lockModal {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 60px;
     height: 60px;
     background-color: var(--terroso);
@@ -208,13 +210,13 @@
 }
 
 .modal h2 {
-    font-size: 21px;
+    font-size: clamp(18px, 4vw, 21px);
     color: var(--borgonha);
     margin: 0;
 }
 
 .modal p {
-    font-size: 16px;
+    font-size: clamp(14px, 3.5vw, 16px);
     line-height: 1.6;
     color: #6b6b6b;
     margin: 0;
@@ -226,21 +228,32 @@
     line-height: 1.5;
     text-decoration: none;
     font-weight: 600;
-
 }
-
 
 .linkAssociar:hover {
     opacity: 0.75;
 }
 
+/* ---------- Mobile ---------- */
 @media (max-width: 650px) {
-    .gridLink {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
+    .gridLink,
     .gridInsticucional {
-        grid-template-columns: 1fr;
-        padding: 1rem;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card,
+    .cardLink {
+        min-height: auto; 
+    }
+}
+
+
+@media (max-width: 380px) {
+    .top {
+        gap: 8px;
+    }
+
+    .top svg {
+        font-size: 20px;
     }
 }
