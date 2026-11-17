@@ -1,20 +1,51 @@
-.tabs {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 32px;
+.wrapper {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  contain: inline-size;
   border-bottom: 1px solid #e5ddd5;
 }
 
+.tabs {
+  position: relative;
+  display: flex;
+  gap: clamp(16px, 4vw, 32px);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
 .tabsButton {
+  flex-shrink: 0;
+  white-space: nowrap;
+
   background: none;
   border: none;
   cursor: pointer;
   padding: 12px 0;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--wire);
   transition: color 0.2s ease;
+}
+
+
+.tabsButton:first-of-type {
+  margin-left: auto;
+}
+
+.tabsButton:last-of-type {
+  margin-right: auto;
 }
 
 .tabsButtonActive {
@@ -23,9 +54,14 @@
 
 .tabsIndicator {
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   height: 2px;
   background: var(--borgonha);
   transition: left 0.25s ease, width 0.25s ease;
 }
 
+@media (max-width: 560px) {
+  .tabs {
+    padding: 0 1rem;
+  }
+}
