@@ -1,4 +1,3 @@
-import IgrejaMatriz from "../assets/Igreja_matriz_de_Itu.jpg"
 
 export interface Cursos {
     id:number,
@@ -71,7 +70,7 @@ export const cursos:Cursos[]=[
         duracao: "6 horas",
         vagas: 20,
         categoria: "Patrimônio",
-        img: IgrejaMatriz,
-        proximaTurma: "28 Jul 2026"
+        img: "https://images.unsplash.com/photo-1767167917587-09d3143851da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
+        proximaTurma: "20 Jul 2026"
     }
 ]
